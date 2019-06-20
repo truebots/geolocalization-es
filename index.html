@@ -99,7 +99,11 @@ function initMap() {
         
             //Create the map object.
             map = new google.maps.Map(document.getElementById('map'), options);
-            
+            marker = new google.maps.Marker({
+                position: centerOfMap,
+                map: map,
+                draggable: true //make it draggable
+            });
     if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
@@ -108,11 +112,7 @@ function initMap() {
             };
             map.setCenter(pos);
             map.setZoom(18);
-            marker = new google.maps.Marker({
-                position: pos,
-                map: map,
-                draggable: true //make it draggable
-            });
+            marker.setPosition(pos);
             markerLocation();
           }, function() {
            
@@ -120,11 +120,7 @@ function initMap() {
           });
         } else {
           // Browser doesn't support Geolocation
-          marker = new google.maps.Marker({
-                position: centerOfMap,
-                map: map,
-                draggable: true //make it draggable
-            });
+          
           
         }
        
