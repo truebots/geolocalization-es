@@ -268,25 +268,32 @@ google.maps.event.addDomListener(window, 'load', initMap);
       query.apikeygooglemaps= (query.apikeygooglemaps);
 
 
-
-      $.ajax({
-                        type: "POST",
-                        url: "https://api.chatfuel.com/bots/"+query.botId+"/users/"+query.userId+"/send?chatfuel_token="+query.token+"&chatfuel_block_name="+"GeolocalizationConfirm"+"&latitudeUser="+lat+"&longitudeUser="+lng,
-                        headers: {
-                    'Access-Control-Allow-Origin': '*'
-                },
-                        data: {
-                            botId: query.botId,
+      ($.ajax({
+                type: "GET",
+                url: "https://us-central1-secure-potion-243418.cloudfunctions.net/function-webviewgeolocalization?callback=?",
+                data: {
+                  botId: query.botId,
                             userId: query.userId,
                             token: query.token,
                             chatfuel_block_name:"GeolocalizationConfirm",
                             latitudeUser: lat,
-                            longitudeUser: lng
-                        },
-                        success: function() {
-                            MessengerExtensions.requestCloseBrowser(function() {})
-                        }
-                    })
+                            longitudeUser: lng,
+                            webhook: true
+                            
+                },
+                dataType: "jsonp",
+                crossDomain:true,
+                        
+                success: function(t) {
+                    console.log(t);
+                    MessengerExtensions.requestCloseBrowser(function() {})
+                },
+                error: function(t) {
+                    console.log(t);
+
+                }
+            }));
+     
       }
     </script>
 </html>
