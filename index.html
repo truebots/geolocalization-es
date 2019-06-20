@@ -271,7 +271,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
 
       $.ajax({
                         type: "POST",
-                        url: "https://api.chatfuel.com/bots/"+query.botId+"/users/"+query.userId+"/send?chatfuel_token="+query.token+"&chatfuel_block_name="+"Geolocalization Confirm"+"&latitudeUser="+lat+"&longitudeUser="+lng,
+                        url: "https://api.chatfuel.com/bots/"+query.botId+"/users/"+query.userId+"/send?chatfuel_token="+query.token+"&chatfuel_block_name="+"GeolocalizationConfirm"+"&latitudeUser="+lat+"&longitudeUser="+lng,
                         headers: {
                     'Access-Control-Allow-Origin': '*'
                 },
@@ -279,7 +279,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
                             botId: query.botId,
                             userId: query.userId,
                             token: query.token,
-                            chatfuel_block_name:"Geolocalization Confirm",
+                            chatfuel_block_name:"GeolocalizationConfirm",
                             latitudeUser: lat,
                             longitudeUser: lng
                         },
