@@ -175,7 +175,6 @@ function initMap() {
             marker.setMap(null);
           });
           markers = [];
-           marker.setTitle(null);
            
           // For each place, get the icon, name and location.
           var bounds = new google.maps.LatLngBounds();
@@ -188,7 +187,6 @@ function initMap() {
 
             // Create a marker for each place.
             marker.setPosition(place.geometry.location);
-            marker.setTitle(place.name);
             markerLocation();
 
             if (place.geometry.viewport) {
