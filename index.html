@@ -256,7 +256,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
       }
     function listo(lat,lng){
 
-      console.log(lat);
+      console.log(document.location.href);
 
       var query = {"userId":obtenerValorParametro("userId"),"botId":obtenerValorParametro("botId"),
       "apikeygooglemaps":obtenerValorParametro("apikeygooglemaps"), "token":obtenerValorParametro("token")};
