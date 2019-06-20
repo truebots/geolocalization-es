@@ -120,6 +120,11 @@ function initMap() {
           });
         } else {
           // Browser doesn't support Geolocation
+          marker = new google.maps.Marker({
+                position: centerOfMap,
+                map: map,
+                draggable: true //make it draggable
+            });
           
         }
        
