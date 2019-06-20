@@ -242,9 +242,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
     <script>
       function obtenerValorParametro(sParametroNombre) {
           var sPaginaURL2 = document.location.href;
-          sPaginaURL2= sPaginaURL2.replace(/%20/g, ' ');
-          sPaginaURL2= sPaginaURL2.replace(/%A0/g, ' ');
-
+          
           var sPaginaURL= sPaginaURL2.split("?");
 
           var sURLVariables = sPaginaURL[1].split('&');
