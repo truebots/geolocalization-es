@@ -104,6 +104,8 @@ function initMap() {
                 map: map,
                 draggable: true //make it draggable
             });
+            markerLocation();
+
     if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
