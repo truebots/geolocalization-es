@@ -83,6 +83,25 @@
       }
         </style>
         <script>
+            (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
+            fjs.parentNode.insertBefore(js, fjs);
+             }(document, "script", "Messenger"));
+            
+              window.extAsyncInit = function () {
+              // the Messenger Extensions JS SDK is done loading
+               MessengerExtensions.getUserID(function success(uids) {
+                var psid = uids.psid;//This is your page scoped sender_id
+                alert(psid);
+            }, function error(err) {
+                alert("Messenger Extension Error: " + err);
+            });
+            };
+            </script>  
+        <script>
         
 //Set up some of our variables.
 var map; //Will contain map object.
@@ -261,12 +280,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
       var query = {"userId":obtenerValorParametro("userId"),"botId":obtenerValorParametro("botId"),
       "apikeygooglemaps":obtenerValorParametro("apikeygooglemaps"), "token":obtenerValorParametro("token")};
 
-      query.token= decodeURIComponent(query.token);
-      console.log(query.token);
-      query.userId= decodeURIComponent(query.userId);
-      query.botId= decodeURIComponent(query.botId);
-      query.apikeygooglemaps= (query.apikeygooglemaps);
-
+     
 
       ($.ajax({
                 type: "GET",
@@ -286,7 +300,15 @@ google.maps.event.addDomListener(window, 'load', initMap);
                         
                 success: function(t) {
                     console.log(t);
-                    MessengerExtensions.requestCloseBrowser(function() {})
+                    window.extAsyncInit = function () {
+                      // the Messenger Extensions JS SDK is done loading
+                      //close the webview
+                      MessengerExtensions.requestCloseBrowser(function success() {
+
+                      }, function error(err) {
+
+                      });
+
                 },
                 error: function(t) {
                     console.log(t);
