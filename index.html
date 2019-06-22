@@ -91,6 +91,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'Messenger'));
 
+
             </script>  
         <script>
         
@@ -231,7 +232,9 @@ function markerLocation(){
 //Load the map when the page has finished loading.
 google.maps.event.addDomListener(window, 'load', initMap);
         </script>
-        <title>Save Marker Example</title>
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+        <title>Location</title>
     </head>
     <body>
         <p>Click on a location on the map to select it. Drag the marker to change location.</p>
