@@ -276,7 +276,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
       "points":obtenerValorParametro("points")};
 
       var block="GeolocalizationConfirm";
-     if(query.points==true){
+     if(query.points!=undefined){
       block="PointsConfirm";
      }
      
