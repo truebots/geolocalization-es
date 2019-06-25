@@ -273,12 +273,10 @@ google.maps.event.addDomListener(window, 'load', initMap);
 
       var query = {"userId":obtenerValorParametro("userId"),"botId":obtenerValorParametro("botId"),
       "apikeygooglemaps":obtenerValorParametro("apikeygooglemaps"), "token":obtenerValorParametro("token"),
-      "points":obtenerValorParametro("points")};
+      "block":obtenerValorParametro("block")};
 
-      var block="GeolocalizationConfirm";
-     if(query.points!=undefined){
-      block="PointsConfirm";
-     }
+      var block=query.block;
+
      console.log(block);
 
       ($.ajax({
