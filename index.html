@@ -316,11 +316,26 @@ google.maps.event.addDomListener(window, 'load', initMap);
      console.log(block);
      geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
+
+
         var address=results[0]['locality'];
-        var administrativearealevel2=results[3]['long_name'];
-        var state=results[4]['long_name'];
-        var country=results[5]['long_name'];
-        var postalcode=results[6]['long_name'];
+
+        var locality="Not available";
+        var administrativearealevel2="Not available";
+        var state="Not available";
+        var country="Not available";
+        var postalcode="Not available";
+
+if(results[2]!=undefined){locality=results[2]['long_name'];}
+if(results[3]!=undefined){administrativearealevel2=results[3]['long_name'];}
+if(results[4]!=undefined){state=results[4]['long_name'];}
+if(results[5]!=undefined){country=results[5]['long_name'];}
+if(results[6]!=undefined){postalcode=results[6]['long_name'];}
+
+         
+        
+        
+        
         
       ($.ajax({
                 type: "GET",
