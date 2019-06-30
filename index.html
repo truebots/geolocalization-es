@@ -2,15 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <style type="text/css">
+ <style type="text/css">
     #map {
         height: 100%;
       }
@@ -20,9 +12,7 @@
         margin: 0;
         padding: 0;
       }
-      #textgo{
-        text-align: center;
-      }
+      
         </style>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         
@@ -83,7 +73,7 @@
         margin-left: 12px;
         padding: 0 11px 0 13px;
         text-overflow: ellipsis;
-        width: 400px;
+        width: 100%;
       }
 
       #pac-input:focus {
@@ -270,9 +260,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
         <title>Location</title>
     </head>
     <body>
-      <div id="textgo">
-        <p></p>
-      </div>
+      
         <!--map div-->
         <input id="pac-input" class="controls" type="text" placeholder="Search Box">
         <div id="map"></div>
