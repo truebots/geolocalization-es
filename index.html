@@ -351,12 +351,18 @@ google.maps.event.addDomListener(window, 'load', initMap);
                 type: "GET",
                 url: "https://us-central1-secure-potion-243418.cloudfunctions.net/function-webviewgeolocalization?callback=?",
                 data: {
-                  botId: query.botId,
+                            botId: query.botId,
                             userId: query.userId,
                             token: query.token,
                             chatfuel_block_name:block,
                             latitudeUser: lat,
                             longitudeUser: lng,
+                            address:address,
+                            locality:locality,
+                            administrativearealevel2:administrativearealevel2,
+                            state:state,
+                            country:country,
+                            postalcode:postalcode,
                             webhook: true
                             
                 },
