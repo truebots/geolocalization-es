@@ -50,8 +50,8 @@
       }
 
       #pac-container {
-        padding-bottom: 12px;
-        margin-right: 12px;
+        padding-bottom: 0;
+        margin-right: 0;
       }
 
       .pac-controls {
@@ -71,7 +71,7 @@
         font-size: 15px;
         font-weight: 300;
         margin-left: 12px;
-        padding: 0 0 0 0;
+        padding: 0 11px 0 13px;
         text-overflow: ellipsis;
         width: 100%;
       }
@@ -236,10 +236,6 @@ function initMap() {
 //values to our textfields so that we can save the location.
 function markerLocation(){
     //Get location.
-    var currentLocation = marker.getPosition();
-    //Add lat and lng values to a field that we can save.
-    document.getElementById('lat').value = currentLocation.lat(); //latitude
-    document.getElementById('lng').value = currentLocation.lng(); //longitude
     
         geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
@@ -265,11 +261,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
         <input id="pac-input" class="controls" type="text" placeholder="Search Box">
         <div id="map"></div>
         
-        <!--our form-->
-        <form method="post">
-            <input class="hidden" type="text" id="lat" readonly="yes">
-            <input class="hidden" type="text" id="lng" readonly="yes">
-        </form>
+        
         
         
     </body>
