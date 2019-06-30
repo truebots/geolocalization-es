@@ -120,7 +120,12 @@ function initMap() {
     var centerOfMap = new google.maps.LatLng(52.357971, -6.516758);
     var options = {
             center: centerOfMap, //Set center.
-            zoom: 7 //The zoom value.
+            zoom: 7, //The zoom value.
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.VERTICAL_BAR,
+                position: google.maps.ControlPosition.RIGHT_CENTER
+            },
             };
         
             //Create the map object.
