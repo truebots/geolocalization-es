@@ -98,13 +98,14 @@
 //Set up some of our variables.
 var map; //Will contain map object.
 var marker = false; ////Has the user plotted their location marker? 
-
+var geocoder;
 //Function called to initialize / create the map.
 //This is called when the page has loaded.
 function initMap() {
  
     //The center location of our map.
-    
+    geocoder = new google.maps.Geocoder();
+
     var centerOfMap = new google.maps.LatLng(52.357971, -6.516758);
     var options = {
             center: centerOfMap, //Set center.
@@ -225,6 +226,16 @@ function markerLocation(){
     //Add lat and lng values to a field that we can save.
     document.getElementById('lat').value = currentLocation.lat(); //latitude
     document.getElementById('lng').value = currentLocation.lng(); //longitude
+    
+        geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+        var address=results[0]['formatted_address'];
+        alert(address);
+        document.getElementById('pac-input').value = address; //longitude
+    
+        }
+        });
+       
 }
 
 
