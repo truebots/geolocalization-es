@@ -142,7 +142,7 @@ function initMap() {
             var centerControl = new CenterControl(centerControlDiv, map);
 
             centerControlDiv.index = 1;
-            map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+            map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(centerControlDiv);
             markerLocation();
 
     if (navigator.geolocation) {
@@ -276,8 +276,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
         <!--map div-->
         <input id="pac-input" class="controls" type="text" placeholder="Search Box">
         <div id="map"></div>
-        <button type="button" class="btn btn-primary btn-lg btn-block" onClick="listo(lat.value,lng.value)">Done</button>
-    
+        
         <!--our form-->
         <form  method="post">
             <input class="hidden" type="text" id="lat" readonly="yes"><br>
@@ -326,11 +325,11 @@ google.maps.event.addDomListener(window, 'load', initMap);
         var country="Not available";
         var postalcode="Not available";
 
-if(results[2]!=undefined){locality=results[2]['long_name'];}
-if(results[3]!=undefined){administrativearealevel2=results[3]['long_name'];}
-if(results[4]!=undefined){state=results[4]['long_name'];}
-if(results[5]!=undefined){country=results[5]['long_name'];}
-if(results[6]!=undefined){postalcode=results[6]['long_name'];}
+        if(results[2]!=undefined){locality=results[2]['long_name'];}
+        if(results[3]!=undefined){administrativearealevel2=results[3]['long_name'];}
+        if(results[4]!=undefined){state=results[4]['long_name'];}
+        if(results[5]!=undefined){country=results[5]['long_name'];}
+        if(results[6]!=undefined){postalcode=results[6]['long_name'];}
 
          
         
