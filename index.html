@@ -317,7 +317,6 @@ google.maps.event.addDomListener(window, 'load', initMap);
      geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
         var address=results[0]['locality'];
-        var locality=results[2]['long_name'];
         var administrativearealevel2=results[3]['long_name'];
         var state=results[4]['long_name'];
         var country=results[5]['long_name'];
