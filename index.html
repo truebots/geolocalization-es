@@ -336,14 +336,16 @@ google.maps.event.addDomListener(window, 'load', initMap);
         var country="Not available";
         var postalcode="Not available";
 
-        if(results[0].address_components[2]!=undefined){locality=results[2]['long_name'];}
-        if(results[0].address_components[3]!=undefined){administrativearealevel2=results[3]['long_name'];}
-        if(results[0].address_components[4]!=undefined){state=results[4]['long_name'];}
-        if(results[0].address_components[5]!=undefined){country=results[5]['long_name'];}
-        if(results[0].address_components[6]!=undefined){postalcode=results[6]['long_name'];}
+        if(results[0].address_components[2]!=undefined){locality=results[0].address_components[2]['long_name'];}
+        if(results[0].address_components[3]!=undefined){administrativearealevel2=results[0].address_components[3]['long_name'];}
+        if(results[0].address_components[4]!=undefined){state=results[0].address_components[4]['long_name'];}
+        if(results[0].address_components[5]!=undefined){country=results[0].address_components[5]['long_name'];}
+        if(results[0].address_components[6]!=undefined){postalcode=results[0].address_components[6]['long_name'];}
 
         console.log("results");
-        alert(results[0].address_components[0]);
+        alert(results[0].address_components[0]['long_name']);
+        alert(results[0].address_components[1]['long_name']);
+        alert(results[0].address_components[2]['long_name']);
         
         
         
