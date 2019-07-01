@@ -357,7 +357,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
                             chatfuel_block_name:block,
                             latitudeUser: lat,
                             longitudeUser: lng,
-                            address:address,
+                            address: encodeURIComponent(address),
                             locality:locality,
                             administrativearealevel2:administrativearealevel2,
                             state:state,
