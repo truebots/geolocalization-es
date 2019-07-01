@@ -341,12 +341,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
         if(results[0].address_components[5]!=undefined){country=results[0].address_components[5]['long_name'];}
         if(results[0].address_components[6]!=undefined){postalcode=results[0].address_components[6]['long_name'];}
 
-        alert(results[0].address_components[0]['long_name']);
-        
-        alert(results[0].address_components[1]['long_name']);
-        alert(results[0].address_components[2]['long_name']);
-        
-        
+       
         
       ($.ajax({
                 type: "GET",
