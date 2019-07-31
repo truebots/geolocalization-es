@@ -345,11 +345,11 @@ google.maps.event.addDomListener(window, 'load', initMap);
 
         var address=results[0]['formatted_address'];
 
-        var locality="Not available";
-        var administrativearealevel2="Not available";
-        var state="Not available";
-        var country="Not available";
-        var postalcode="Not available";
+        var locality="No disponible";
+        var administrativearealevel2="No disponible";
+        var state="No disponible";
+        var country="No disponible";
+        var postalcode="No disponible";
 
         if(results[0].address_components[2]!=undefined){locality=results[0].address_components[2]['long_name'];}
         if(results[0].address_components[3]!=undefined){administrativearealevel2=results[0].address_components[3]['long_name'];}
