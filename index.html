@@ -23,16 +23,7 @@
         </style>
         
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script>
-            $.getScript('./config.js', function()
-    {
-        // script is now loaded and executed.
-        // put your dependent JS here.
-        var mykey = config.MY_KEY;
-        console.log(mykey);
-    });
-            
-            </script>
+        
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2ydY8um8yzgI_qwLmrFp7b5mJ3q6T05E&libraries=places&callback=initMap"
         async defer></script>
 
@@ -341,6 +332,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
       var block=query.block;
 
      console.log(block);
+     console.log(query.nameFunction);
      geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
 
